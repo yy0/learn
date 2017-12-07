@@ -51,3 +51,7 @@ management:
   shell:
     ssh:
       port: 2001
+
+# condition test
+condition:
+  init: true

@@ -1,4 +1,4 @@
-package com.jriver.annotion;
+package com.jriver.scanAnnontation;
 
 import java.lang.annotation.*;
 
