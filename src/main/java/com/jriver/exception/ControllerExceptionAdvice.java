@@ -1,4 +1,4 @@
-package com.jriver.web;
+package com.jriver.exception;
 
 import com.jriver.model.ServiceResult;
 import org.slf4j.Logger;
@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
 import javax.servlet.http.HttpServletRequest;
-import java.util.Map;
 
 @ControllerAdvice(basePackages = "com.jriver.web")
 public class ControllerExceptionAdvice extends ResponseEntityExceptionHandler {
