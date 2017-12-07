@@ -1,0 +1,11 @@
+# debug: true
+# 服务号
+app:
+  name: ${random.uuid}
+
+server:
+  port: 8080
+
+spring:
+  profiles:
+    active: dev
