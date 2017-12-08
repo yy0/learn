@@ -1,4 +1,4 @@
-package com.jriver.config;
+package com.jriver.mybatis;
 
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.context.annotation.Configuration;

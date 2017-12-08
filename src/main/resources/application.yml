@@ -9,3 +9,5 @@ server:
 spring:
   profiles:
     active: dev
+  application:
+     name: ${app.name}
