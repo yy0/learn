@@ -9,8 +9,9 @@ import org.springframework.amqp.rabbit.connection.CachingConnectionFactory;
 import org.springframework.amqp.rabbit.connection.ConnectionFactory;  
 import org.springframework.amqp.rabbit.core.ChannelAwareMessageListener;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
-import org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer;  
-import org.springframework.beans.factory.config.ConfigurableBeanFactory;  
+import org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer;
+import org.springframework.amqp.support.converter.Jackson2JsonMessageConverter;
+import org.springframework.beans.factory.config.ConfigurableBeanFactory;
 import org.springframework.context.annotation.Bean;  
 import org.springframework.context.annotation.Configuration;  
 import org.springframework.context.annotation.Scope;  
@@ -37,15 +38,16 @@ public class AmqpConfig {
         connectionFactory.setUsername("guest");  
         connectionFactory.setPassword("guest");  
         connectionFactory.setVirtualHost("/");  
-        connectionFactory.setPublisherConfirms(true); //必须要设置  
-        return connectionFactory;  
+        connectionFactory.setPublisherConfirms(true); //必须要设置
+        return connectionFactory;
     }  
   
     @Bean  
     @Scope(ConfigurableBeanFactory.SCOPE_PROTOTYPE)  
     //必须是prototype类型  
     public RabbitTemplate rabbitTemplate() {  
-        RabbitTemplate template = new RabbitTemplate(connectionFactory());  
+        RabbitTemplate template = new RabbitTemplate(connectionFactory());
+        template.setMessageConverter(new Jackson2JsonMessageConverter());
         return template;  
     }  
   
@@ -88,6 +90,6 @@ public class AmqpConfig {
             channel.basicAck(message.getMessageProperties().getDeliveryTag(), false); //确认消息成功消费
         });
         return container;  
-    }  
+    }
   
 }  
