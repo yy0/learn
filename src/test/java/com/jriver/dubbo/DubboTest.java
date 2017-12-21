@@ -15,8 +15,23 @@ public class DubboTest {
 	private DubboConsumerService dubboConsumerService;
 
 	@Test
-	public void hello() throws Exception {
+	public void printGeneric() throws Exception {
+		dubboConsumerService.printGeneric();
+	}
+
+	@Test
+	public void print() throws Exception {
 		dubboConsumerService.print();
+	}
+
+	@Test
+	public void getDataGeneric() throws Exception {
+		dubboConsumerService.getDataGeneric();
+	}
+
+	@Test
+	public void getData() throws Exception {
+		dubboConsumerService.getData();
 	}
 
 }

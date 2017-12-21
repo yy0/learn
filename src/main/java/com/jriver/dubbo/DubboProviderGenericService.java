@@ -1,5 +1,6 @@
 package com.jriver.dubbo;
 
+import com.alibaba.boot.dubbo.annotation.Generic;
 import com.alibaba.dubbo.config.annotation.Service;
 import org.springframework.stereotype.Component;
 
@@ -9,13 +10,14 @@ import java.util.Map;
 /**
  * Created by wujianjiang on 2017-12-19.
  */
-@Service(interfaceClass = IDubboProviderService.class)
+@Service(interfaceName = "jriver.DubboProviderGenericService")
+@Generic
 @Component
-public class DubboProviderService implements IDubboProviderService {
+public class DubboProviderGenericService implements IDubboProviderService {
 
     @Override
     public void println(String data){
-        System.err.println("============DubboProviderService===========>>: " + data);
+        System.err.println("============DubboProviderGenericService===========>>: " + data);
     }
 
     @Override
