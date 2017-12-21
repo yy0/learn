@@ -1,7 +1,5 @@
 package com.jriver;
 
-import com.jriver.condition.ConditionTest;
-import com.jriver.scanAnnontation.ScanTest;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
@@ -19,11 +17,11 @@ public class Application {
                 System.out.println("========");
             }
         }).build().run(args);*/
-        ConditionTest condition = context.getBean("conditionTest", ConditionTest.class);
+        /*ConditionTest condition = context.getBean("conditionTest", ConditionTest.class);
         System.out.println(condition == null);
 
         ScanTest scanTest = context.getBean("scanTest", ScanTest.class);
-        scanTest.print();
+        scanTest.print();*/
     }
 
 }

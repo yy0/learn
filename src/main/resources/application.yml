@@ -1,13 +1,11 @@
 # debug: true
 # 服务号
 app:
-  name: ${random.uuid}
-
-server:
-  port: 8080
+  id: ${random.uuid}
+  name: jriver
 
 spring:
   profiles:
-    active: dev
+    active: test
   application:
      name: ${app.name}

@@ -1,5 +1,6 @@
 package com.jriver.rabbitmq;
 
+import com.jriver.condition.InitCondition;
 import org.springframework.amqp.core.AcknowledgeMode;
 import org.springframework.amqp.core.Binding;  
 import org.springframework.amqp.core.BindingBuilder;  
@@ -12,8 +13,9 @@ import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer;
 import org.springframework.amqp.support.converter.Jackson2JsonMessageConverter;
 import org.springframework.beans.factory.config.ConfigurableBeanFactory;
-import org.springframework.context.annotation.Bean;  
-import org.springframework.context.annotation.Configuration;  
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Conditional;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Scope;  
 
 /**  
@@ -26,6 +28,7 @@ import org.springframework.context.annotation.Scope;
  */  
   
 @Configuration
+@Conditional(InitCondition.class)
 public class AmqpConfig {  
   
     public static final String EXCHANGE   = "spring-boot-exchange";  

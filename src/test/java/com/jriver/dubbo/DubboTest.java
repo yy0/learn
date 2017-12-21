@@ -1,9 +1,6 @@
-package com.jriver.rabbitmq;
+package com.jriver.dubbo;
 
-import com.alibaba.boot.dubbo.annotation.DubboConsumer;
-import com.alibaba.boot.dubbo.annotation.EnableDubboConfiguration;
 import com.jriver.dubbo.DubboConsumerService;
-import com.jriver.dubbo.IDubboProviderService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,7 +9,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class RabbitMqHelloTest {
+public class DubboTest {
 
 	@Autowired
 	private DubboConsumerService dubboConsumerService;

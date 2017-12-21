@@ -1,8 +1,10 @@
 package com.jriver.rabbitmq;
 
+import com.jriver.condition.InitCondition;
 import org.springframework.amqp.core.*;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Conditional;
 import org.springframework.context.annotation.Configuration;
 
 /**
@@ -10,6 +12,7 @@ import org.springframework.context.annotation.Configuration;
  */
 @Configuration
 @ConfigurationProperties(prefix="mq")
+@Conditional(InitCondition.class)
 public class RabbitConfig {
 
     private String directQueue;
