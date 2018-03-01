@@ -1,6 +1,5 @@
 server:
-  port: 8090
-
+  port: 8080
 # 日志目录
 logging:
   path: /var/log
@@ -46,30 +45,32 @@ spring:
     database: 0
     host: 172.24.180.24
     port: 6379
-    pool:
-      max-active: 8
-      max-wait: -1
-      max-idle: 8
-      min-idle: 0
+    jedis:
+      pool:
+        max-active: 8
+        max-wait: -1
+        max-idle: 8
+        min-idle: 0
   dubbo:
     appname: ${app.name}
     registry: zookeeper://127.0.0.1:2181
     protocol: dubbo
-    port: 20801
+    port: 20800
 
 # 应用监控
 management:
-  port: 9091
-  context-path: /actuator
-  security:
-    enabled: false
-  shell:
-    ssh:
-      port: 2002
-
+  server:
+    port: 9090
+    ssl:
+      enabled: false
+    servlet:
+      context-path: /actuator
 # condition test
 condition:
   init: false
 # mq
 mq:
   direct-queue: spring-boot-mq
+disruptor:
+  ringBufferSize: 1024
+  producerType: SINGLE
