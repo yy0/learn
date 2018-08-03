@@ -9,13 +9,6 @@ import org.springframework.web.context.request.ServletRequestAttributes;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
- * Controller 基础类
- * User: lishiming
- * Date: 2015/12/29 14:39
- * Since: 1.0
- */
-@SuppressWarnings("serial")
 @Component
 public class BaseController {
 
